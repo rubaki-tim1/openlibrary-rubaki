@@ -1,70 +1,164 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontributor | RUBAKI</title>
-  <link rel="icon" href="img/logo-ikon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontributor · RUBAKI</title>
+  <meta name="description" content="Orang-orang di balik RUBAKI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/kontributor.css">
 </head>
-<body>
+<body data-halaman="kontributor">
+  <!-- Ikon dan maskot dipakai ulang lewat <use href="#..."> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="fox" viewBox="0 0 220 220">
+        <path d="M150 196 C204 190 218 140 192 112 C186 150 166 162 138 168Z" fill="#E9761A"/>
+        <path d="M192 112 C208 134 204 162 186 176 C182 152 186 132 192 112Z" fill="#FFF3E2"/>
+        <ellipse cx="110" cy="176" rx="56" ry="44" fill="#E9761A"/>
+        <ellipse cx="110" cy="184" rx="32" ry="30" fill="#FFF3E2"/>
+        <path d="M50 74 L40 10 L98 46Z" fill="#E9761A"/>
+        <path d="M56 60 L51 26 L84 47Z" fill="#FFDDBC"/>
+        <path d="M170 74 L180 10 L122 46Z" fill="#E9761A"/>
+        <path d="M164 60 L169 26 L136 47Z" fill="#FFDDBC"/>
+        <path d="M110 30 C162 30 188 60 188 96 C188 130 152 148 110 148 C68 148 32 130 32 96 C32 60 58 30 110 30Z" fill="#F28C28"/>
+        <path d="M32 96 C52 102 72 108 86 120 C96 130 100 142 110 148 C78 149 42 136 32 96Z" fill="#FFF3E2"/>
+        <path d="M188 96 C168 102 148 108 134 120 C124 130 120 142 110 148 C142 149 178 136 188 96Z" fill="#FFF3E2"/>
+        <ellipse cx="110" cy="124" rx="26" ry="20" fill="#FFF3E2"/>
+        <path d="M70 94 q11 -13 22 0" stroke="#3B2A1A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+        <path d="M128 94 q11 -13 22 0" stroke="#3B2A1A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+        <circle cx="64" cy="114" r="10" fill="#F4A08C" opacity=".7"/>
+        <circle cx="156" cy="114" r="10" fill="#F4A08C" opacity=".7"/>
+        <ellipse cx="110" cy="112" rx="8" ry="6" fill="#3B2A1A"/>
+        <path d="M98 122 q12 16 24 0" stroke="#3B2A1A" stroke-width="4" fill="#C9483A" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M58 150 L108 162 L108 216 L58 204Z" fill="#4A86C8"/>
+        <path d="M162 150 L112 162 L112 216 L162 204Z" fill="#3B74B4"/>
+        <path d="M106 162 L110 158 L114 162 L114 216 L106 216Z" fill="#FFFFFF"/>
+        <path d="M137 180 c-4 -7 -15 -4 -13 5 c1 5 13 13 13 13 s12 -8 13 -13 c2 -9 -9 -12 -13 -5z" fill="#FFFFFF"/>
+        <ellipse cx="60" cy="178" rx="11" ry="13" fill="#7A4A26"/>
+        <ellipse cx="160" cy="178" rx="11" ry="13" fill="#7A4A26"/>
+      </symbol>
 
-<!-- NAVBAR: jangan diubah, sama persis di semua halaman (DESIGN.md bagian 5) -->
-<header class="navbar">
-  <div class="container navbar-isi">
-    <a class="logo" href="index.html">
-      <picture>
-        <source media="(max-width: 1024px)" srcset="img/logo-ikon.png">
-        <img src="img/logo.png" alt="RUBAKI - Ruang Baca Kita">
-      </picture>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="currentColor"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5c3-1.5 6.5-1.5 9.5.5V20c-3-2-6.5-2-9.5-.5zM22 5c-3-1.5-6.5-1.5-9.5.5V20c3-2 6.5-2 9.5-.5z" fill="currentColor"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><path d="M7 2v3M17 2v3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><rect x="3" y="4.5" width="18" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="2.2"/><g fill="currentColor"><circle cx="8" cy="13.5" r="1.3"/><circle cx="12" cy="13.5" r="1.3"/><circle cx="16" cy="13.5" r="1.3"/><circle cx="8" cy="17.5" r="1.3"/><circle cx="12" cy="17.5" r="1.3"/></g></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 11v6" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.5" fill="#fff"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H6M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.3-9.2C1.4 7.4 3.6 4 7 4c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 15.4 12 20 12 20z" fill="currentColor"/></symbol>
+      <symbol id="i-people" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="12" cy="7" r="3.4"/><circle cx="5" cy="9" r="2.6"/><circle cx="19" cy="9" r="2.6"/><path d="M5.5 20c0-4 2.9-7 6.5-7s6.5 3 6.5 7z"/><path d="M0.5 19c0-3 1.9-5.3 4.5-5.3 1 0 1.8.3 2.5.8-1 1.3-1.6 2.8-1.8 4.5z"/><path d="M23.5 19c0-3-1.9-5.3-4.5-5.3-1 0-1.8.3-2.5.8 1 1.3 1.6 2.8 1.8 4.5z"/></g></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.5 2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z" fill="currentColor" stroke="#C98A00" stroke-width="1" stroke-linejoin="round"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12z" fill="currentColor"/><circle cx="12" cy="10" r="2.6" fill="#fff"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></symbol>
+      <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4.5" fill="currentColor"/><path d="M10 9v6l5-3z" fill="#fff"/></symbol>
+      <symbol id="i-tt" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M14 3c.4 2.6 2.2 4.4 5 4.6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#main">Lewati ke konten utama</a>
+
+  <!-- NAVBAR: sama di semua halaman, jangan diubah -->
+  <header class="topbar" id="top">
+    <a class="brand" href="index.html" aria-label="RUBAKI, ke beranda">
+      <svg class="brand__fox" width="56" height="56" aria-hidden="true"><use href="#fox"/></svg>
+      <span class="brand__text">
+        <span class="brand__name"><span class="o">RUBA</span><span class="b">KI</span></span>
+        <span class="brand__tag">Ruang Baca Kita</span>
+      </span>
     </a>
-    <nav class="navbar-menu" id="menu">
-      <a href="index.html">Beranda</a>
-      <a href="koleksi.html">Koleksi</a>
-      <a href="panduan.html">Panduan Orang Tua &amp; Guru</a>
-      <a class="aktif" aria-current="page" href="kontributor.html">Kontributor</a>
-      <a href="tentang.html">Tentang</a>
+
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="nav__link" href="index.html" data-route="beranda"><svg aria-hidden="true"><use href="#i-home"/></svg><span>Beranda</span></a>
+      <a class="nav__link" href="koleksi.html" data-route="koleksi"><svg aria-hidden="true"><use href="#i-book"/></svg><span>Koleksi</span></a>
+      <a class="nav__link" href="agenda.html" data-route="agenda"><svg aria-hidden="true"><use href="#i-cal"/></svg><span>Agenda</span></a>
+      <a class="nav__link" href="tentang.html" data-route="tentang"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Tentang</span></a>
     </nav>
-    <a class="tombol-cari" href="koleksi.html#cari" aria-label="Cari buku">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
-    </a>
-    <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="menu">
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+
+    <button class="search-btn" type="button" id="openSearch" aria-label="Cari buku atau agenda (tombol /)">
+      <svg aria-hidden="true"><use href="#i-search"/></svg>
     </button>
-  </div>
-</header>
+  </header>
 
-<main>
-  <!-- ISI HALAMAN KONTRIBUTOR DI SINI -->
-  <section class="container section">
-    <h1>Kontributor</h1>
-    <p>Halaman ini belum diisi.</p>
-  </section>
-</main>
+  <main id="main" tabindex="-1">
+    <!-- ===== ISI HALAMAN KONTRIBUTOR (bagian yang boleh kamu ubah) ===== -->
+    <section class="halaman">
+      <div class="wrap page">
+        <header class="page__head">
+          <h1 class="plank plank--lg"><svg aria-hidden="true"><use href="#i-heart"/></svg>Kontributor</h1>
+          <p class="page__lead">Halaman ini masih dikerjakan.</p>
+        </header>
+      </div>
+    </section>
+  </main>
 
-<!-- FOOTER: jangan diubah, sama persis di semua halaman (DESIGN.md bagian 14) -->
-<footer class="footer">
-  <div class="container footer-isi">
-    <div>
-      <h2>RUBAKI</h2>
-      <p>Ruang Baca Kita</p>
+  <!-- FOOTER: sama di semua halaman, jangan diubah -->
+  <footer class="footer">
+    <svg class="footer__wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C200 0 400 60 600 30 C800 0 1000 50 1200 20 V60 H0Z" fill="currentColor"/></svg>
+    <div class="footer__inner wrap">
+      <div class="footer__brand">
+        <span class="footer__name">RUBAKI</span>
+        <span class="footer__tag">Ruang Baca Kita</span>
+      </div>
+      <p class="footer__line">Tempat membaca, belajar, dan berimajinasi bersama.</p>
+      <div class="footer__social">
+        <button type="button" class="social" data-social="Instagram" aria-label="Instagram RUBAKI"><svg aria-hidden="true"><use href="#i-ig"/></svg></button>
+        <button type="button" class="social" data-social="YouTube" aria-label="YouTube RUBAKI"><svg aria-hidden="true"><use href="#i-yt"/></svg></button>
+        <button type="button" class="social" data-social="TikTok" aria-label="TikTok RUBAKI"><svg aria-hidden="true"><use href="#i-tt"/></svg></button>
+      </div>
     </div>
-    <p>Tempat membaca, belajar, dan berimajinasi bersama.</p>
-    <nav aria-label="Tautan footer">
-      <a href="koleksi.html">Koleksi</a> ·
-      <a href="panduan.html">Panduan</a> ·
+    <nav class="footer__links" aria-label="Tautan lain">
+      <a href="panduan.html">Panduan Orang Tua &amp; Guru</a>
       <a href="kontributor.html">Kontributor</a>
     </nav>
-  </div>
-  <p class="hak-cipta">© 2026 RUBAKI. Ruang Baca Kita.</p>
-</footer>
+    <p class="footer__copy">© 2026 RUBAKI. Ruang Baca Kita. <span class="footer__note">Halaman contoh proyek Jaringan Komputer dan Desain Web. Jadwal dan alamat masih contoh.</span></p>
+    <button type="button" class="to-top" id="toTop" aria-label="Kembali ke atas"><svg aria-hidden="true"><use href="#i-up"/></svg></button>
+  </footer>
 
-<button class="kembali-atas" aria-label="Kembali ke atas">↑</button>
+  <!-- DIALOG bersama: detail buku dan pencarian -->
+  <dialog class="modal" id="bookModal" aria-labelledby="bmTitle">
+    <button type="button" class="modal__close" data-close aria-label="Tutup detail buku"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="bm">
+      <div class="bm__cover" id="bmCover" aria-hidden="true"></div>
+      <div class="bm__info">
+        <span class="chip" id="bmCat"></span>
+        <h2 id="bmTitle"></h2>
+        <p class="bm__meta" id="bmMeta"></p>
+        <p id="bmSyn"></p>
+        <div class="bm__actions">
+          <a class="btn btn--primary" id="bmRead" href="koleksi.html">Baca Sekarang</a>
+          <button type="button" class="btn btn--soft fav-toggle" id="bmFav" aria-pressed="false"><svg aria-hidden="true"><use href="#i-heart"/></svg><span>Simpan ke favorit</span></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
 
-<script src="js/main.js" defer></script>
-<script src="data/buku.js"></script>
-<script src="js/kontributor.js" defer></script>
+  <dialog class="modal modal--search" id="searchModal" aria-labelledby="smTitle">
+    <h2 id="smTitle" class="sr">Pencarian</h2>
+    <div class="search-box">
+      <svg aria-hidden="true"><use href="#i-search"/></svg>
+      <label for="globalSearch" class="sr">Cari buku atau agenda</label>
+      <input id="globalSearch" type="search" placeholder="Cari buku atau agenda…" autocomplete="off">
+      <button type="button" class="icon-btn" data-close aria-label="Tutup pencarian"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/buku.js" defer></script>
+  <script src="data/agenda.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/kontributor.js" defer></script>
 </body>
 </html>

@@ -1,1 +1,15 @@
-/* Gaya khusus halaman Koleksi. Pakai variabel dari style.css, jangan tulis HEX sendiri. Class diawali koleksi- */
+/* Gaya khusus halaman koleksi. Variabel warna dan komponen umum ada di css/style.css */
+.toolbar { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 16px; }
+.field--search { flex: 1 1 320px; }
+.input-ic { position: relative; }
+.input-ic svg { position: absolute; left: 14px; top: 50%; width: 20px; height: 20px; transform: translateY(-50%); color: var(--ink-soft); }
+.input-ic input { padding-left: 44px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.chips button {
+  min-height: 44px; padding: 8px 18px; border-radius: 999px;
+  border: 2px solid var(--sand-line); background: var(--paper);
+  font: 600 1rem var(--font-head); color: var(--ink);
+}
+.chips button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #FFF8EE; }
+.result-count { font-size: .95rem; color: var(--ink-soft); margin-bottom: 16px; }
+#kolGrid { margin-bottom: 64px; }

@@ -1,1 +1,1 @@
-// Script khusus halaman Panduan Orang Tua & Guru. Data buku tersedia di variabel BUKU (dari data/buku.js).
+/* RUBAKI · js/panduan.js. Script khusus halaman ini, fungsi umum ada di js/main.js. */
