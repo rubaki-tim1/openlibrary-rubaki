@@ -250,3 +250,32 @@ $(".skip").addEventListener("click", (e) => { e.preventDefault(); $("#main").foc
 const keAtas = $("#toTop");
 window.addEventListener("scroll", () => keAtas.classList.toggle("is-visible", window.scrollY > 500), { passive: true });
 keAtas.addEventListener("click", () => window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+
+/* =========================================================
+   Mode terang dan gelap
+   Pilihan disimpan di browser. Kalau belum pernah memilih,
+   ikut setelan perangkat (tema awalnya dipasang di <head>).
+   ========================================================= */
+const tombolTema = $("#toggleTema");
+
+function pasangTema(tema) {
+  document.documentElement.dataset.tema = tema;
+  const gelap = tema === "gelap";
+  tombolTema.setAttribute("aria-pressed", gelap);
+  tombolTema.setAttribute("aria-label", gelap ? "Ganti ke mode terang" : "Ganti ke mode gelap");
+  tombolTema.innerHTML = `<svg aria-hidden="true"><use href="#i-${gelap ? "sun" : "moon"}"/></svg>`;
+}
+
+pasangTema(document.documentElement.dataset.tema || "terang");
+
+tombolTema.addEventListener("click", () => {
+  const baru = document.documentElement.dataset.tema === "gelap" ? "terang" : "gelap";
+  pasangTema(baru);
+  simpan.taruh("tema", baru);
+  toast(baru === "gelap" ? "Mode gelap aktif" : "Mode terang aktif");
+});
+
+/* Ikuti perubahan setelan perangkat selama pengguna belum memilih sendiri */
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+  if (simpan.ambil("tema", null) === null) pasangTema(e.matches ? "gelap" : "terang");
+});

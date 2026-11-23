@@ -404,3 +404,99 @@ mark { background: #FFE08A; color: inherit; border-radius: 3px; padding: 0 2px; 
 /* Tautan Panduan dan Kontributor di footer */
 .footer__links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 24px; margin-top: 20px; }
 .footer__links a { color: #fff; font-weight: 700; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
+
+/* =========================================================
+   Tombol tema dan MODE GELAP
+   Aktif lewat <html data-tema="gelap">. Warna utama diganti
+   lewat variabel, sisanya warna tetap yang perlu ikut gelap.
+   ========================================================= */
+.theme-btn {
+  width: 52px; height: 52px; flex: none;
+  display: grid; place-items: center;
+  border: 2px solid rgba(47, 99, 168, .25); border-radius: 50%;
+  background: var(--paper); color: var(--blue-deep);
+}
+.theme-btn svg { width: 24px; height: 24px; }
+.theme-btn:hover { background: var(--sky); }
+.theme-btn + .search-btn { margin-left: -12px; }
+
+@media (max-width: 760px) {
+  .theme-btn { width: 48px; height: 48px; }
+  .theme-btn + .search-btn { margin-left: -2px; }
+}
+
+[data-tema="gelap"] {
+  color-scheme: dark;
+  --cream: #1C1511;
+  --paper: #281F18;
+  --sand: #3A2C21;
+  --sand-line: #4C3A2A;
+  --ink: #F5E8D8;
+  --ink-soft: #CDB8A2;
+  --orange-soft: #4A2E17;
+  --blue: #8DB8EE;
+  --blue-deep: #A6C8F2;
+  --sky: #22344A;
+  --focus: #A6C8F2;
+}
+
+[data-tema="gelap"] .skip,
+[data-tema="gelap"] .toast { color: #1C1511; }
+[data-tema="gelap"] .theme-btn { border-color: rgba(166, 200, 242, .3); }
+
+/* Header dan navigasi */
+[data-tema="gelap"] .topbar { background: rgba(26, 38, 54, .88); box-shadow: 0 6px 20px rgba(0, 0, 0, .35); }
+[data-tema="gelap"] .brand__name .o,
+[data-tema="gelap"] .nav__link[aria-current="page"] { color: #F7A04B; }
+[data-tema="gelap"] .nav__link { color: #CFE0F5; }
+[data-tema="gelap"] .nav__link:hover { background: rgba(255, 255, 255, .08); }
+@media (max-width: 760px) {
+  [data-tema="gelap"] .topbar { background: #1A2636; }
+}
+
+/* Tombol, tautan, chip */
+[data-tema="gelap"] .btn--soft { color: #FFD2A6; }
+[data-tema="gelap"] .btn--soft:hover { background: #5A3920; }
+[data-tema="gelap"] .pill-link:hover { background: #2C4560; }
+[data-tema="gelap"] .chip--blue  { background: #1F3A5C; color: #CFE3FA; }
+[data-tema="gelap"] .chip--green { background: #24402A; color: #BFE3A8; }
+[data-tema="gelap"] .chip--gold  { background: #4A3A12; color: #F6DB8E; }
+[data-tema="gelap"] .chip--rose  { background: #4A2622; color: #F5C4BC; }
+[data-tema="gelap"] .chips button[aria-pressed="true"] { color: #1C1511; }
+[data-tema="gelap"] mark { background: #6E5A12; }
+
+/* Panel dan kartu */
+[data-tema="gelap"] .panel,
+[data-tema="gelap"] .about-hero { background: #241B15; }
+[data-tema="gelap"] .book,
+[data-tema="gelap"] .agenda-item,
+[data-tema="gelap"] .card,
+[data-tema="gelap"] .reader__card { border-color: var(--sand-line); }
+[data-tema="gelap"] .book:hover { box-shadow: 0 10px 22px rgba(0, 0, 0, .4); }
+[data-tema="gelap"] .fav-btn { background: rgba(40, 31, 24, .95); color: #8A7868; }
+[data-tema="gelap"] .fav-btn[aria-pressed="true"],
+[data-tema="gelap"] .fav-toggle[aria-pressed="true"] svg { color: #FF6B73; }
+[data-tema="gelap"] .date-badge { background: var(--paper); border-color: #5A4530; }
+[data-tema="gelap"] .status--open { color: #9BD67A; }
+[data-tema="gelap"] .status--closed { color: #F2A396; }
+
+/* Formulir */
+[data-tema="gelap"] input,
+[data-tema="gelap"] select,
+[data-tema="gelap"] textarea { background: #221A14; border-color: #6A5440; }
+[data-tema="gelap"] .err { color: #FF8A80; }
+[data-tema="gelap"] .modal::backdrop { background: rgba(0, 0, 0, .65); }
+
+/* Beranda: pemandangan jadi senja */
+[data-tema="gelap"] .hero__scene { filter: brightness(.5) saturate(.85); }
+[data-tema="gelap"] .slide__pre,
+[data-tema="gelap"] .slide__lead,
+[data-tema="gelap"] .slide__title--sm { color: #FFF1E0; }
+[data-tema="gelap"] .hero__controls { background: rgba(40, 31, 24, .85); }
+[data-tema="gelap"] .dot::before { background: #6A5440; }
+
+/* Footer dan tombol bulat */
+[data-tema="gelap"] .footer { background: #16283F; }
+[data-tema="gelap"] .footer__wave { color: #16283F; }
+[data-tema="gelap"] .social,
+[data-tema="gelap"] .to-top { background: var(--paper); color: #CFE0F5; }
