@@ -418,11 +418,13 @@ mark { background: #FFE08A; color: inherit; border-radius: 3px; padding: 0 2px; 
 }
 .theme-btn svg { width: 24px; height: 24px; }
 .theme-btn:hover { background: var(--sky); }
-.theme-btn + .search-btn { margin-left: -12px; }
+.theme-btn + .search-btn,
+.theme-btn + .theme-btn { margin-left: -12px; }
 
 @media (max-width: 760px) {
   .theme-btn { width: 48px; height: 48px; }
-  .theme-btn + .search-btn { margin-left: -2px; }
+  .theme-btn + .search-btn,
+  .theme-btn + .theme-btn { margin-left: -2px; }
 }
 
 [data-tema="gelap"] {
@@ -500,3 +502,7 @@ mark { background: #FFE08A; color: inherit; border-radius: 3px; padding: 0 2px; 
 [data-tema="gelap"] .footer__wave { color: #16283F; }
 [data-tema="gelap"] .social,
 [data-tema="gelap"] .to-top { background: var(--paper); color: #CFE0F5; }
+
+/* Tombol musik saat menyala */
+#toggleMusik[aria-pressed="true"] { background: var(--orange-soft); color: var(--orange-deep); border-color: var(--orange); }
+[data-tema="gelap"] #toggleMusik[aria-pressed="true"] { color: #F7A04B; }
