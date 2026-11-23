@@ -1,8 +1,16 @@
+<p align="center">
+  <a href="https://rubaki-tim1.github.io/openlibrary-rubaki/">
+    <img src="img/banner.png" alt="RUBAKI, Ruang Baca Kita. Klik untuk membuka website" width="100%">
+  </a>
+</p>
+
+<p align="center"><a href="https://rubaki-tim1.github.io/openlibrary-rubaki/"><b>🦊 Buka website RUBAKI</b></a></p>
+
 # RUBAKI (Ruang Baca Kita)
 
 Website open library bacaan anak, mini project Jaringan Komputer dan Desain Web, Tim 1.
 
-Lihat web-nya di link GitHub Pages (ada di bagian About sebelah kanan).
+Lihat web-nya di [rubaki-tim1.github.io/openlibrary-rubaki](https://rubaki-tim1.github.io/openlibrary-rubaki/), atau klik banner di atas.
 
 ## Pembagian file
 
