@@ -39,9 +39,8 @@ function renderAgendaMini() {
 const carousel = (() => {
   const slides = $$(".slide");
   const dots = $$(".dot");
-  const tombolJeda = $("#heroPause");
   const kurangiGerak = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let idx = 0, timer = null, dijeda = kurangiGerak, ditahan = false;
+  let idx = 0, timer = null, ditahan = false;
 
   function ke(i) {
     idx = (i + slides.length) % slides.length;
@@ -50,15 +49,10 @@ const carousel = (() => {
   }
   function jalan() {
     clearInterval(timer);
-    if (!dijeda && !ditahan) timer = setInterval(() => ke(idx + 1), 6000);
-  }
-  function aturTombol() {
-    tombolJeda.innerHTML = `<svg aria-hidden="true"><use href="#i-${dijeda ? "play" : "pause"}"/></svg>`;
-    tombolJeda.setAttribute("aria-label", dijeda ? "Putar pergantian sorotan" : "Jeda pergantian sorotan");
+    if (!kurangiGerak && !ditahan) timer = setInterval(() => ke(idx + 1), 6000);
   }
 
   dots.forEach((d) => d.addEventListener("click", () => { ke(+d.dataset.go); jalan(); }));
-  tombolJeda.addEventListener("click", () => { dijeda = !dijeda; aturTombol(); jalan(); });
   const hero = $("#hero");
   hero.addEventListener("mouseenter", () => { ditahan = true; jalan(); });
   hero.addEventListener("mouseleave", () => { ditahan = false; jalan(); });
@@ -75,7 +69,6 @@ const carousel = (() => {
     x0 = null;
   }, { passive: true });
 
-  aturTombol();
   return { mulai: jalan, henti: () => clearInterval(timer) };
 })();
 

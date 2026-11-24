@@ -48,8 +48,6 @@
 }
 .dot::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: #E3C9A6; transition: width .2s, background-color .2s; }
 .dot.is-active::before { width: 26px; border-radius: 8px; background: var(--orange-deep); }
-.hero__pause { width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--sand); color: var(--ink); display: grid; place-items: center; }
-.hero__pause svg { width: 16px; height: 16px; }
 @media (prefers-reduced-motion: no-preference) {
   .windmill { animation: spin 14s linear infinite; transform-box: fill-box; transform-origin: center; }
   .cloud { animation: drift 40s ease-in-out infinite alternate; }
