@@ -107,64 +107,120 @@
 
   <main id="main" tabindex="-1">
      <!-- ===== ISI HALAMAN KONTRIBUTOR (bagian yang boleh kamu ubah) ===== -->
-    <section class="halaman">
-      <div class="wrap page">
-        <header class="page__head">
-          <h1 class="plank plank--lg"><svg aria-hidden="true"><use href="#i-heart"/></svg>Kontributor</h1>
-          <p class="page__lead">Kenalan sama Tim 1, orang-orang di balik RUBAKI!</p>
-</header>
+  <style>
+  .kontributor .divisi { margin-top: 32px; }
+  .kontributor .divisi h2 { font-size: 28px; margin-bottom: 4px; }
+  .kontributor .divisi-desc { margin-bottom: 16px; }
+  .kontributor .grid-orang {
+    display: grid;
+    gap: var(--jarak-komponen);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 600px) {
+    .kontributor .grid-orang { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .kontributor .grid-orang { grid-template-columns: repeat(3, 1fr); }
+  }
+  .kontributor .kartu-orang {
+    background: var(--putih);
+    border: 2px solid var(--biru);
+    border-radius: var(--radius-kartu);
+    padding: 14px 18px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .kontributor .nama-orang {
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+  .kontributor .badge-ketua {
+    background: var(--kuning);
+    color: var(--cokelat);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: var(--radius-tombol);
+  }
+</style>
 
-<section class="divisi">
-  <h2>Ketua Project</h2>
-  <div class="kontributor-daftar">
-    <article class="kartu-anggota"><h3>Zahra Fadhilatunnisa</h3><p class="peran">Ketua Project</p><p>Memimpin dan mengoordinasi seluruh divisi RUBAKI.</p></article>
+<section class="halaman kontributor">
+  <div class="wrap page">
+    <header class="page__head">
+      <h1 class="plank plank--lg"><svg aria-hidden="true"><use href="#i-heart"/></svg>Kontributor</h1>
+      <p class="page__lead">Kenalan sama Tim 1, orang-orang di balik RUBAKI.</p>
+    </header>
+    <div id="daftar-kontributor"></div>
   </div>
 </section>
 
-<section class="divisi">
-  <h2>Divisi Riset</h2>
-  <div class="kontributor-daftar">
-    <article class="kartu-anggota"><h3>Rahmi Nur’arifah</h3><p class="peran">Ketua Divisi Riset</p><p>Memimpin pencarian cerita anak dari sumber terbuka.</p></article>
-    <article class="kartu-anggota"><h3>Neshadzira Assyifa Yudha</h3><p class="peran">Anggota Riset</p><p>Mencari dan menyeleksi bacaan anak.</p></article>
-    <article class="kartu-anggota"><h3>Hasna Syakiran</h3><p class="peran">Anggota Riset</p><p>Mencari dan menyeleksi bacaan anak.</p></article>
-    <article class="kartu-anggota"><h3>Shahia Athifa Zarra</h3><p class="peran">Anggota Riset</p><p>Mencari dan menyeleksi bacaan anak.</p></article>
-  </div>
-</section>
+<script>
+  var DIVISI = [
+    { nama: "Pimpinan Project", desc: "Memimpin dan mengoordinasi seluruh divisi." },
+    { nama: "Divisi Riset", desc: "Mencari dan menyeleksi cerita anak dari sumber terbuka." },
+    { nama: "Divisi Konten", desc: "Menyusun isi cerita dan data buku." },
+    { nama: "Divisi HTML & CSS", desc: "Membangun tampilan website." },
+    { nama: "Divisi Jaringan", desc: "Mengelola jaringan dan hosting website." }
+  ];
+  var ANGGOTA = [
+    { nama: "Zahra Fadhilatunnisa", peran: "Ketua", divisi: "Pimpinan Project" },
+    { nama: "Rahmi Nur'arifah", peran: "Ketua", divisi: "Divisi Riset" },
+    { nama: "Neshadzira Assyifa Yudha", peran: "Anggota", divisi: "Divisi Riset" },
+    { nama: "Hasna Syakiran", peran: "Anggota", divisi: "Divisi Riset" },
+    { nama: "Shahia Athifa Zarra", peran: "Anggota", divisi: "Divisi Riset" },
+    { nama: "Fadzhyra Naurha", peran: "Ketua", divisi: "Divisi Konten" },
+    { nama: "Widya Pitaloka", peran: "Anggota", divisi: "Divisi Konten" },
+    { nama: "Aqila Naufal Rafif", peran: "Anggota", divisi: "Divisi Konten" },
+    { nama: "Muhammad Mughny Assyidiqi", peran: "Ketua", divisi: "Divisi HTML & CSS" },
+    { nama: "Muhamad Fauzan Habibie", peran: "Anggota", divisi: "Divisi HTML & CSS" },
+    { nama: "Hanifa Tazkiyah", peran: "Anggota", divisi: "Divisi HTML & CSS" },
+    { nama: "Nur Fadillah Azzakiyah", peran: "Anggota", divisi: "Divisi HTML & CSS" },
+    { nama: "Tazqia Dewi Stepani", peran: "Anggota", divisi: "Divisi HTML & CSS" },
+    { nama: "Aszidan", peran: "Anggota", divisi: "Divisi HTML & CSS" },
+    { nama: "Zunita Rafa Ayu Cintya", peran: "Ketua", divisi: "Divisi Jaringan" },
+    { nama: "Muhamad Febrian Azhar", peran: "Anggota", divisi: "Divisi Jaringan" },
+    { nama: "Nur Afifah Ainul Mardhiyah", peran: "Anggota", divisi: "Divisi Jaringan" },
+    { nama: "Hilyah Ajrillah", peran: "Anggota", divisi: "Divisi Jaringan" },
+    { nama: "Saihan Nawawi Alghifari", peran: "Anggota", divisi: "Divisi Jaringan" }
+  ];
 
-<section class="divisi">
-  <h2>Divisi Konten</h2>
-  <div class="kontributor-daftar">
-    <article class="kartu-anggota"><h3>Fadzhyra Naurha</h3><p class="peran">Ketua Divisi Konten</p><p>Memimpin penyusunan isi dan data buku.</p></article>
-    <article class="kartu-anggota"><h3>Widya Pitaloka</h3><p class="peran">Anggota Konten</p><p>Menyusun isi cerita dan data buku.</p></article>
-    <article class="kartu-anggota"><h3>Aqila Naufal Rafif</h3><p class="peran">Anggota Konten</p><p>Menyusun isi cerita dan data buku.</p></article>
-  </div>
-</section>
-
-<section class="divisi">
-  <h2>Divisi HTML &amp; CSS</h2>
-  <div class="kontributor-daftar">
-    <article class="kartu-anggota"><h3>Muhammad Mughny Assyidiqi</h3><p class="peran">Ketua Divisi HTML &amp; CSS</p><p>Memimpin pembuatan tampilan website.</p></article>
-    <article class="kartu-anggota"><h3>Muhamad Fauzan Habibie</h3><p class="peran">Anggota HTML &amp; CSS</p><p>Mengerjakan halaman Beranda.</p></article>
-    <article class="kartu-anggota"><h3>Hanifa Tazkiyah</h3><p class="peran">Anggota HTML &amp; CSS</p><p>Mengerjakan CSS global dan data buku.</p></article>
-    <article class="kartu-anggota"><h3>Nur Fadillah Azzakiyah</h3><p class="peran">Anggota HTML &amp; CSS</p><p>Mengerjakan tampilan website.</p></article>
-    <article class="kartu-anggota"><h3>Tazqia Dewi Stepani</h3><p class="peran">Anggota HTML &amp; CSS</p><p>Mengerjakan halaman Detail buku.</p></article>
-    <article class="kartu-anggota"><h3>Aszidan</h3><p class="peran">Anggota HTML &amp; CSS</p><p>Mengerjakan halaman Koleksi.</p></article>
-  </div>
-</section>
-
-<section class="divisi">
-  <h2>Divisi Jaringan</h2>
-  <div class="kontributor-daftar">
-    <article class="kartu-anggota"><h3>Zunita Rafa Ayu Cintya</h3><p class="peran">Ketua Divisi Jaringan</p><p>Memimpin pengelolaan jaringan dan hosting.</p></article>
-    <article class="kartu-anggota"><h3>Muhamad Febrian Azhar</h3><p class="peran">Anggota Jaringan</p><p>Mendukung kebutuhan jaringan tim.</p></article>
-    <article class="kartu-anggota"><h3>Nur Afifah Ainul Mardhiyah</h3><p class="peran">Anggota Jaringan</p><p>Mendukung kebutuhan jaringan tim.</p></article>
-    <article class="kartu-anggota"><h3>Hilyah Ajrillah</h3><p class="peran">Anggota Jaringan</p><p>Mendukung kebutuhan jaringan tim.</p></article>
-    <article class="kartu-anggota"><h3>Saihan Nawawi Alghifari</h3><p class="peran">Anggota Jaringan</p><p>Mendukung kebutuhan jaringan tim.</p></article>
-  </div>
-</section>
-        </header>
-      </div>
-    </section>
+  (function () {
+    var root = document.getElementById("daftar-kontributor");
+    DIVISI.forEach(function (d) {
+      var sec = document.createElement("section");
+      sec.className = "divisi";
+      var h = document.createElement("h2");
+      h.textContent = d.nama;
+      var p = document.createElement("p");
+      p.className = "divisi-desc";
+      p.textContent = d.desc;
+      var ul = document.createElement("ul");
+      ul.className = "grid-orang";
+      ANGGOTA.filter(function (a) { return a.divisi === d.nama; }).forEach(function (a) {
+        var li = document.createElement("li");
+        li.className = "kartu-orang";
+        var n = document.createElement("p");
+        n.className = "nama-orang";
+        n.textContent = a.nama;
+        li.appendChild(n);
+        if (a.peran === "Ketua") {
+          var b = document.createElement("span");
+          b.className = "badge-ketua";
+          b.textContent = "Ketua";
+          li.appendChild(b);
+        }
+        ul.appendChild(li);
+      });
+      sec.appendChild(h);
+      sec.appendChild(p);
+      sec.appendChild(ul);
+      root.appendChild(sec);
+    });
+  })();
+</script>
   </main>
 
   <!-- FOOTER: sama di semua halaman, jangan diubah -->
