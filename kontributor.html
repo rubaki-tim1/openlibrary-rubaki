@@ -107,37 +107,67 @@
 
   <main id="main" tabindex="-1">
      <!-- ===== ISI HALAMAN KONTRIBUTOR (bagian yang boleh kamu ubah) ===== -->
-  <style>
+<style>
   .kontributor .divisi { margin-top: 32px; }
   .kontributor .divisi h2 { font-size: 28px; margin-bottom: 4px; }
   .kontributor .divisi-desc { margin-bottom: 16px; }
+
   .kontributor .grid-orang {
     display: grid;
-    gap: var(--jarak-komponen);
-    grid-template-columns: 1fr;
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   @media (min-width: 600px) {
-    .kontributor .grid-orang { grid-template-columns: repeat(2, 1fr); }
+    .kontributor .grid-orang { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--jarak-komponen); }
   }
   @media (min-width: 1024px) {
-    .kontributor .grid-orang { grid-template-columns: repeat(3, 1fr); }
+    .kontributor .grid-orang { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
+  @media (max-width: 340px) {
+    .kontributor .grid-orang { grid-template-columns: 1fr; }
+  }
+
   .kontributor .kartu-orang {
-    background: var(--putih);
-    border: 2px solid var(--biru);
-    border-radius: var(--radius-kartu);
-    padding: 14px 18px;
+    position: relative;
+    overflow: hidden;
     min-width: 0;
+    min-height: 104px;
+    padding: 16px 14px;
+    border-radius: var(--radius-kartu);
+    background: var(--biru-langit);
+    color: var(--cokelat);
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: flex-start;
     gap: 8px;
   }
-  .kontributor .nama-orang {
+  .kontributor .warna-krem   { background: var(--krem-gelap); }
+  .kontributor .warna-biru   { background: var(--biru-langit); }
+  .kontributor .warna-hijau  { background: var(--badge-hijau); }
+  .kontributor .warna-oranye { background: var(--badge-oranye); }
+  .kontributor .warna-kuning { background: var(--badge-kuning); }
+
+  .kontributor .huruf-besar {
+    position: absolute;
+    right: -6px;
+    top: -14px;
+    font-family: var(--font-judul);
     font-weight: 700;
+    font-size: 84px;
+    line-height: 1;
+    color: var(--putih);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .kontributor .nama-orang {
+    position: relative;
+    font-weight: 700;
+    line-height: 1.3;
     overflow-wrap: anywhere;
   }
   .kontributor .badge-ketua {
+    position: relative;
     background: var(--kuning);
     color: var(--cokelat);
     font-size: 13px;
@@ -145,6 +175,7 @@
     padding: 2px 12px;
     border-radius: var(--radius-tombol);
   }
+  .kontributor .warna-kuning .badge-ketua { box-shadow: 0 0 0 2px var(--cokelat); }
 </style>
 
 <section class="halaman kontributor">
@@ -159,11 +190,11 @@
 
 <script>
   var DIVISI = [
-    { nama: "Pimpinan Project", desc: "Memimpin dan mengoordinasi seluruh divisi." },
-    { nama: "Divisi Riset", desc: "Mencari dan menyeleksi cerita anak dari sumber terbuka." },
-    { nama: "Divisi Konten", desc: "Menyusun isi cerita dan data buku." },
-    { nama: "Divisi HTML & CSS", desc: "Membangun tampilan website." },
-    { nama: "Divisi Jaringan", desc: "Mengelola jaringan dan hosting website." }
+    { nama: "Pimpinan Project", warna: "krem", desc: "Memimpin dan mengoordinasi seluruh divisi." },
+    { nama: "Divisi Riset", warna: "biru", desc: "Mencari dan menyeleksi cerita anak dari sumber terbuka." },
+    { nama: "Divisi Konten", warna: "hijau", desc: "Menyusun isi cerita dan data buku." },
+    { nama: "Divisi HTML & CSS", warna: "oranye", desc: "Membangun tampilan website." },
+    { nama: "Divisi Jaringan", warna: "kuning", desc: "Mengelola jaringan dan hosting website." }
   ];
   var ANGGOTA = [
     { nama: "Zahra Fadhilatunnisa", peran: "Ketua", divisi: "Pimpinan Project" },
@@ -201,10 +232,15 @@
       ul.className = "grid-orang";
       ANGGOTA.filter(function (a) { return a.divisi === d.nama; }).forEach(function (a) {
         var li = document.createElement("li");
-        li.className = "kartu-orang";
-        var n = document.createElement("p");
+        li.className = "kartu-orang warna-" + d.warna;
+        var hb = document.createElement("span");
+        hb.className = "huruf-besar";
+        hb.setAttribute("aria-hidden", "true");
+        hb.textContent = a.nama.charAt(0);
+        var n = document.createElement("span");
         n.className = "nama-orang";
         n.textContent = a.nama;
+        li.appendChild(hb);
         li.appendChild(n);
         if (a.peran === "Ketua") {
           var b = document.createElement("span");
